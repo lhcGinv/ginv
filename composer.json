@@ -1,0 +1,27 @@
+{
+    "name": "ginv/framework",
+    "description": "the php micro-service framework use yar",
+    "type": "project",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "sixi",
+            "email": "530176577@qq.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "classmap": [
+            "class"
+        ],
+        "files": [
+            "function.php"
+        ],
+        "psr-4": {
+            "api\\": "api/"
+        }
+    },
+    "require": {
+        "symfony/var-dumper": "^4.1"
+    }
+}

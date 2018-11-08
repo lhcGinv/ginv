@@ -1,0 +1,17 @@
+{{define "account.list"}}
+    select
+        *
+    from
+        accounts
+    where
+        true
+        {{ if .id}}
+            and id = :id
+        {{end}}
+        {{ if .limit}}
+            limit :limit
+        {{end}}
+        {{ if .offset}}
+            offset :offset
+        {{end}}
+{{end}}
