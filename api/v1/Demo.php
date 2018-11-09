@@ -13,8 +13,9 @@ class Demo extends Base
      * @return array
      */
     public function index($page=1, $limit = 10) {
+        $offset = ($page-1) * $limit;
         $db = db();
-        $account_list = $db->query('account.list',['page' => $page, 'limit' => $limit]);
+        $account_list = $db->query('account.list',['limit' => $limit, 'offset' => $offset]);
         return $this->set($account_list)->response();
     }
 }
