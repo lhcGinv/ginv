@@ -1,4 +1,5 @@
 <?php
+
 return [
     // 默认数据库连接名称
     'default' => 'mysql',

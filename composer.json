@@ -1,6 +1,6 @@
 {
-    "name": "ginv/framework",
-    "description": "the php micro-service framework use yar",
+    "name": "ginv/ginv",
+    "description": "a php rpc framework use yar",
     "type": "project",
     "license": "Apache-2.0",
     "authors": [
@@ -11,17 +11,15 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "classmap": [
-            "class"
-        ],
-        "files": [
-            "function.php"
-        ],
         "psr-4": {
             "api\\": "api/"
         }
     },
     "require": {
+        "php": "^7.1.16 || ^7.2.4",
+        "ginv/framework": "^1.1"
+    },
+    "require-dev": {
         "symfony/var-dumper": "^4.1"
     }
 }
