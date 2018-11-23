@@ -7,9 +7,9 @@
  */
 
 namespace api;
-use Base as Basic;
+use base as basic;
 
-class Base extends Basic
+class base extends basic
 {
 
 }

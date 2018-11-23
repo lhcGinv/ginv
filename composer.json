@@ -17,6 +17,7 @@
     },
     "require": {
         "php": "^7.1.16 || ^7.2.4",
+        "ext-json": "*",
         "ginv/framework": "^1.0"
     },
     "require-dev": {

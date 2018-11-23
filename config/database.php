@@ -10,14 +10,15 @@ return [
         'driver' => 'mysql',
         'host' => '10.10.20.207',
         'port' => '23306',
-        'database' => 'demo',
-        'username' => 'demo',
+        'username' => 'root',
         'password' => '123456',
-        'unix_socket' => '',
+        'database' => 'ginv_mysql',
         'charset' => 'utf8mb4',
-        'collation' => 'utf8mb4_unicode_ci',
-        'prefix' => '',
-        'strict' => true,
-        'engine' => null,
     ],
+
+    'redis' => [
+        'host' => '10.10.20.207',
+        'port' => 6379,
+        'timeout' => 2.5
+    ]
 ];

@@ -1,7 +1,8 @@
 <?php
-
 require __DIR__.'/vendor/autoload.php';
-new SQLLoader();
+
+new sqlLoader();
+
 $version = $_GET['ginV_version'];
 $api = $_GET['ginV_api'];
 $method = $_GET['ginV_method'];
@@ -14,8 +15,7 @@ if ($api=='rpc') {
     return null;
 }
 
-if (config('app.model') == 'debug') {
-    include_once(__DIR__.'/test.php');
-    test();
-}
 
+if (config('app.model') == 'debug') {
+    include_once(base_path('test.php'));
+}
