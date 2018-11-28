@@ -14,6 +14,10 @@ class demo extends base
      * @return array
      */
     public function index(int $page=1, int $limit = 10) {
+        $redis = redis();
+        $key = redis_key("demo_info", 111);
+        $info = $redis->do('get', $key);
+        dd($info);
         $offset = ($page-1) * $limit;
         $db = db();
         $params = ['in_account_id' => ['1','18','24']];

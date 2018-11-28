@@ -1,7 +1,6 @@
 {
     "name": "ginv/ginv",
     "description": "a php rpc framework use yar",
-    "type": "project",
     "license": "Apache-2.0",
     "authors": [
         {
@@ -12,7 +11,8 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "api\\": "api/"
+            "api\\": "api/",
+            "script\\": "script/"
         }
     },
     "require": {

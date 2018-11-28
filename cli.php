@@ -3,12 +3,9 @@ if (PHP_SAPI === 'cli') {
     require __DIR__ . '/vendor/autoload.php';
     new sqlLoader();
 
-    print_r($argv);
-
-    $version      = $argv[1];
-    $api          = $argv[2];
-    $method       = $argv[3];
-    $action_name  = "\api\\$version\\$api";
+    $class        = $argv[1];
+    $method       = $argv[2];
+    $action_name  = "\script\\$class";
     $action_class = new $action_name();
     $action_class->$method();
 }
