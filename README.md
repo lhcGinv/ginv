@@ -31,7 +31,7 @@ class Blog extends Base
      *
      * @return array
      */
-    public function blogList($account_uuid = '',$page = 1, $limit = 10) {
+    public function blogList($account_uuid = '', $page = 1, $limit = 10) {
         $offset = ($page-1) * $limit;
         $db = db();
         $params = [
@@ -39,11 +39,11 @@ class Blog extends Base
             'limit' => $limit,
             'offset' => $offset
         ];
-        $count = $db->count('account.count',$params);
-        $list = $db->query('account.list',$params);
-        $account_uuid_array = array_column($list,'account_uuid');
+        $count = $db->count('account.count', $params);
+        $list = $db->query('account.list', $params);
+        $account_uuid_array = array_column($list, 'account_uuid');
         // 获取用户的用户名
-        $account_array = $this->rpc('demo_account','account')->call('accountList',$account_uuid_array);
+        $account_array = $this->rpc('demo_account', 'account')->call('accountList', $account_uuid_array);
         foreach ($list as &$item) {
             foreach ($account_array as $account) {
                 if ($item['account_uuid'] == $account['account_uuid']) {
