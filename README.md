@@ -72,7 +72,7 @@ class Blog extends Base
 ```
 template目录下blog.blade.php文件中sql模板如下:
 
-```
+```php
 @section("blog.list")
     select
         *
