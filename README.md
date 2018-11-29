@@ -13,8 +13,26 @@ composer create-project --prefer-dist ginv/ginv demo
 * [yar](http://pecl.php.net/package/yar "yar扩展PECL安装地址")
 * [SeasLog](http://pecl.php.net/package/SeasLog "SeasLog扩展PECL安装地址")
 
+# 数据查询
 
-# 一个简单的例子
+## 调用另外一个服务
+$this->rpc(服务名,服务类)->call(服务函数[,函数参数1[, 函数参数2...]]);
+
+## 查询数据库数据
+数据库查询有用的函数如下:
+| 函数      |      说明      |
+|----------|:-------------:|
+| query    |  查询多条数据          |
+| queryRow |    centered   |
+| exec     | right-aligned |
+| count    | right-aligned |
+
+作者：cxuan
+链接：https://www.jianshu.com/p/7a655e5345b2
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+
+## 一个简单的例子
 ```php
 <?php
 
