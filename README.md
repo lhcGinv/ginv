@@ -10,5 +10,5 @@ composer create-project --prefer-dist ginv/ginv demo
 * php7以上
 
 # 依赖
-* [yar] (http://pecl.php.net/package/yar "yar扩展PECL安装地址")
+* [yar](http://pecl.php.net/package/yar "yar扩展PECL安装地址")
 * [SeasLog](http://pecl.php.net/package/SeasLog "SeasLog扩展PECL安装地址")
