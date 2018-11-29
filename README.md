@@ -31,19 +31,19 @@ class Blog extends Base
      *
      * @return array
      */
-    public function blogList($account_uuid = '', $page = 1, $limit = 10) {
+    public function blogList($account_uuid = '',$page = 1, $limit = 10) {
         $offset = ($page-1) * $limit;
-        $db = db();
-        $params = [
-            'account_uuid' => $account_uuid,
-            'limit' => $limit,
-            'offset' => $offset
-        ];
-        $count = $db->count('account.count', $params);
-        $list = $db->query('account.list', $params);
-        $account_uuid_array = array_column($list, 'account_uuid');
+        $db     = db();
+        $count  = $db->count('account.count', ['account_uuid' => $account_uuid]);
+        $list   = $db->select('id','title', 'description', 'account_uuid')
+                     ->query('account.list', [
+                        'account_uuid' => $account_uuid,
+                        'limit' => $limit,
+                        'offset' => $offset
+                     ]);
+        $account_uuid_array = array_column($list,'account_uuid');
         // 获取用户的用户名
-        $account_array = $this->rpc('demo_account', 'account')->call('accountList', $account_uuid_array);
+        $account_array = $this->rpc('demo_account','account')->call('accountList',$account_uuid_array);
         foreach ($list as &$item) {
             foreach ($account_array as $account) {
                 if ($item['account_uuid'] == $account['account_uuid']) {
@@ -55,4 +55,38 @@ class Blog extends Base
         return $this->set($result)->response();
     }
 }
+```
+
+```
+@section("blog.list")
+    select
+        *
+    from
+        blog
+    where
+        true
+        @if($account_uuid)
+            and account_uuid = :account_uuid
+        @endif
+        @if($limit)
+            limit :limit
+        @endif
+        @if($offset)
+            offset :offset
+        @endif
+@endsection
+
+
+@section("blog.count")
+    select
+        count(*)
+    from
+        blog
+    where
+        true
+    @if($account_uuid)
+        and account_uuid = :account_uuid
+    @endif
+    limit 1
+@endsection
 ```
