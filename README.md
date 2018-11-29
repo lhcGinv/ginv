@@ -22,15 +22,10 @@ $this->rpc(服务名,服务类)->call(服务函数[,函数参数1[, 函数参数
 数据库查询有用的函数如下:
 | 函数      |      说明      |
 |----------|:-------------:|
-| query    |  查询多条数据          |
-| queryRow |    centered   |
-| exec     | right-aligned |
-| count    | right-aligned |
-
-作者：cxuan
-链接：https://www.jianshu.com/p/7a655e5345b2
-來源：简书
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+| query    |  查询多条记录   |
+| queryRow |  查询单条记录   |
+| exec     | 执行一条 SQL 语句，并返回受影响的行数 |
+| count    | count查询快捷返回函数 |
 
 ## 一个简单的例子
 ```php
