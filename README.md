@@ -24,6 +24,7 @@ composer create-project --prefer-dist ginv/ginv demo
 
 ## 调用另外一个服务
 $this->rpc(服务名,服务类)->call(服务函数[,函数参数1[, 函数参数2...]]);
+> 服务名在配置文件`config/service.php`配置
 
 ## 查询数据库数据
 数据库查询有用的函数如下:
