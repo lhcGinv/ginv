@@ -92,7 +92,7 @@ redis函数启用redis连接并实例化redis类
 ```php
 $id = 1;
 $key = redis_key('account_info',$id);
-$account_info = redis()->do('get',key);
+$account_info = redis()->do('get',$key);
 ```
 
 ## base_path
