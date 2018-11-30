@@ -63,7 +63,7 @@ location / {
 ```
 
 # 函数
-Ginv的助手函数非常少
+ginv的助手函数非常少
 ## config
 config函数用户获取一个配置:
 ```php
